@@ -5,7 +5,10 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tunerfish", "Tunerfish\Tunerfish.csproj", "{80F20AB2-3062-4054-AAED-5C2F51BB5472}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentation", "{75C7F084-9921-40FF-A028-56A7ABEB8BDB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{1D0F17CC-CB8B-4BA7-BC3F-A822F15E5F83}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\txt.txt = Documentation\txt.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
