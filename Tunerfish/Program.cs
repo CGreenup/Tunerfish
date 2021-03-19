@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Tunerfish
 {
     static class Program
@@ -20,4 +22,7 @@ namespace Tunerfish
         }
     }
 }
+
+//Get the nuget packages for NAudio.Wave and .CoreAudioApi
+// you may need system.Numerics? idk what that's for
 
