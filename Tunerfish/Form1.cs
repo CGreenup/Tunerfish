@@ -37,12 +37,32 @@ namespace Tunerfish
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void noteplayerBtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void metronomeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tunerBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void analysisBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void historyBtn_Click(object sender, EventArgs e)
         {
 
         }
