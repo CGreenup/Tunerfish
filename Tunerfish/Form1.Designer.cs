@@ -1,4 +1,6 @@
-﻿namespace Tunerfish
+﻿using System;
+
+namespace Tunerfish
 {
     partial class Form1
     {
@@ -28,6 +30,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -39,7 +44,8 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.analysisBtn = new System.Windows.Forms.Button();
             this.historyBtn = new System.Windows.Forms.Button();
-            this.testingText = new System.Windows.Forms.TextBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -58,6 +64,7 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,7 +100,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(925, 100);
-            this.splitContainer1.SplitterDistance = 370;
+            this.splitContainer1.SplitterDistance = 368;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer4
@@ -109,21 +116,20 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.noteplayerBtn);
-            this.splitContainer4.Size = new System.Drawing.Size(370, 100);
-            this.splitContainer4.SplitterDistance = 185;
+            this.splitContainer4.Size = new System.Drawing.Size(368, 100);
+            this.splitContainer4.SplitterDistance = 183;
             this.splitContainer4.TabIndex = 0;
             // 
             // metronomeBtn
             // 
             this.metronomeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metronomeBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metronomeBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
             this.metronomeBtn.Location = new System.Drawing.Point(0, 0);
             this.metronomeBtn.Name = "metronomeBtn";
-            this.metronomeBtn.Size = new System.Drawing.Size(185, 100);
+            this.metronomeBtn.Size = new System.Drawing.Size(183, 100);
             this.metronomeBtn.TabIndex = 0;
             this.metronomeBtn.Text = "Metronome";
             this.metronomeBtn.UseVisualStyleBackColor = true;
-            this.metronomeBtn.Click += new System.EventHandler(this.metronomeBtn_Click);
             // 
             // noteplayerBtn
             // 
@@ -135,7 +141,6 @@
             this.noteplayerBtn.TabIndex = 0;
             this.noteplayerBtn.Text = "Note Player";
             this.noteplayerBtn.UseVisualStyleBackColor = true;
-            this.noteplayerBtn.Click += new System.EventHandler(this.noteplayerBtn_Click);
             // 
             // splitContainer2
             // 
@@ -146,13 +151,12 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.tunerBtn);
-            this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(551, 100);
-            this.splitContainer2.SplitterDistance = 185;
+            this.splitContainer2.Size = new System.Drawing.Size(553, 100);
+            this.splitContainer2.SplitterDistance = 184;
             this.splitContainer2.TabIndex = 0;
             // 
             // tunerBtn
@@ -161,11 +165,10 @@
             this.tunerBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
             this.tunerBtn.Location = new System.Drawing.Point(0, 0);
             this.tunerBtn.Name = "tunerBtn";
-            this.tunerBtn.Size = new System.Drawing.Size(185, 100);
+            this.tunerBtn.Size = new System.Drawing.Size(184, 100);
             this.tunerBtn.TabIndex = 0;
             this.tunerBtn.Text = "Tuner";
             this.tunerBtn.UseVisualStyleBackColor = true;
-            this.tunerBtn.Click += new System.EventHandler(this.tunerBtn_Click);
             // 
             // splitContainer3
             // 
@@ -180,7 +183,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.historyBtn);
-            this.splitContainer3.Size = new System.Drawing.Size(362, 100);
+            this.splitContainer3.Size = new System.Drawing.Size(365, 100);
             this.splitContainer3.SplitterDistance = 185;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -194,7 +197,6 @@
             this.analysisBtn.TabIndex = 0;
             this.analysisBtn.Text = "Audio Analysis";
             this.analysisBtn.UseVisualStyleBackColor = true;
-            this.analysisBtn.Click += new System.EventHandler(this.analysisBtn_Click);
             // 
             // historyBtn
             // 
@@ -202,19 +204,32 @@
             this.historyBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
             this.historyBtn.Location = new System.Drawing.Point(0, 0);
             this.historyBtn.Name = "historyBtn";
-            this.historyBtn.Size = new System.Drawing.Size(173, 100);
+            this.historyBtn.Size = new System.Drawing.Size(176, 100);
             this.historyBtn.TabIndex = 0;
             this.historyBtn.Text = "History";
             this.historyBtn.UseVisualStyleBackColor = true;
-            this.historyBtn.Click += new System.EventHandler(this.historyBtn_Click);
             // 
-            // testingText
+            // chart1
             // 
-            this.testingText.Location = new System.Drawing.Point(287, 132);
-            this.testingText.Name = "testingText";
-            this.testingText.Size = new System.Drawing.Size(212, 20);
-            this.testingText.TabIndex = 1;
-            this.testingText.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            this.chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent;
+            this.chart1.BorderSkin.PageColor = System.Drawing.Color.DimGray;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(224, 64);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.chart1.Size = new System.Drawing.Size(592, 300);
+            this.chart1.TabIndex = 1;
+            this.chart1.Text = "chart1";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -222,7 +237,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(925, 509);
-            this.Controls.Add(this.testingText);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -246,10 +261,12 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
+
+       
 
         #endregion
 
@@ -264,7 +281,8 @@
         private System.Windows.Forms.Button analysisBtn;
         private System.Windows.Forms.Button historyBtn;
         private System.Windows.Forms.Button tunerBtn;
-        private System.Windows.Forms.TextBox testingText;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -16,13 +16,12 @@ namespace Tunerfish
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            
+
         }
     }
 }
-
-//Get the nuget packages for NAudio.Wave and .CoreAudioApi
-// you may need system.Numerics? idk what that's for
-
