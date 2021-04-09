@@ -29,26 +29,38 @@ namespace Metronome
         // It also reads the user's input.
         static void Main(string[] args)
         {
-            // Reads user's tempo input.
-            Console.WriteLine("Enter a tempo in milliseconds:");
-            Tempo.val = Console.ReadLine();
+            // Allows the user to input a new tempo.
+            while (true)
+            {
+                // Reads user's tempo input.
+                Console.WriteLine("Enter a tempo in milliseconds or type '0' to exit:");
+                Tempo.val = Console.ReadLine();
 
-            // Converts input to integer.
-            Tempo.res = Convert.ToInt32(Tempo.val);
+                // Converts input to integer.
+                Tempo.res = Convert.ToInt32(Tempo.val);
 
-            // Creates and instance for timer.
-            System.Timers.Timer timer = new System.Timers.Timer();
+                // Exits the program.
+                if (Tempo.val.Equals("0"))
+                {
+                    break;
+                }
 
-            // Event handler.
-            timer.Elapsed += timerElapsed;
+                // Creates and instance for timer.
+                System.Timers.Timer timer = new System.Timers.Timer();
 
-            // Timer Interval.
-            timer.Interval += 1000;
+                // Event handler.
+                timer.Elapsed += timerElapsed;
 
-            // Starts and stops the program.
-            timer.Start();
-            Console.ReadLine();
-            timer.Stop();
+                // Timer Interval.
+                timer.Interval += 1000;
+                
+                Console.WriteLine("Press'ENTER' to enter a new tempo...");
+
+                // Starts and stops the program.
+                timer.Start();
+                Console.ReadLine();
+                timer.Stop();
+            }
         }
 
         // The timerElapsed method controls the metronome's tempo and sound.
