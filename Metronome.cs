@@ -54,7 +54,7 @@ namespace Metronome
                 // Timer Interval.
                 timer.Interval += 1000;
                 
-                Console.WriteLine("Press'ENTER' to enter a new tempo...");
+                Console.WriteLine("Press'ENTER' to enter a new tempo.");
 
                 // Starts and stops the program.
                 timer.Start();
