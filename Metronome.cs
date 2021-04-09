@@ -14,14 +14,6 @@ using System.Timers;
 
 namespace Metronome
 {
-    /* This class stores and converts variables that are read from the user's input in the Main method,
-       then called in the timerElapsed method to control the metronome's Tempo.*/
-    public class Tempo
-    {
-        public static string val;
-        public static int res;
-    }
-
     // This class contains the metronome's logic.
     class Metronome
     {
@@ -29,19 +21,32 @@ namespace Metronome
         // It also reads the user's input.
         static void Main(string[] args)
         {
+            // Variables.
+            string val;
+            int res;
+            float pel;
+            int gan;
+
             // Allows the user to input a new tempo.
             while (true)
             {
-                // Reads user's tempo input.
-                Console.WriteLine("Enter a tempo in milliseconds or type '0' to exit:");
-                Tempo.val = Console.ReadLine();
+                // Reads user's BPM input.
+                Console.WriteLine("Enter a tempo in BPM or type '1' to exit:");
+                val = Console.ReadLine();
 
-                // Converts input to integer.
-                Tempo.res = Convert.ToInt32(Tempo.val);
+                // Converts input string to integer.
+                res = Convert.ToInt32(val);
+
+                // Divides BPM integer by 60000 (how many ms in a minute) and stores the sum as a floating point.
+                pel = 60000 / res;
+
+                // Coverts the floating point into an integer
+                gan = Convert.ToInt32(pel);
 
                 // Exits the program.
-                if (Tempo.val.Equals("0"))
+                if (val.Equals("1"))
                 {
+                    Console.WriteLine("\nExiting... Goodbye!");
                     break;
                 }
 
@@ -52,9 +57,10 @@ namespace Metronome
                 timer.Elapsed += timerElapsed;
 
                 // Timer Interval.
-                timer.Interval += 1000;
+                timer.Interval += gan;
                 
-                Console.WriteLine("Press'ENTER' to enter a new tempo.");
+                // Prompts user to click 'ENTER' to stop the current tempo so they can enter a new one.
+                Console.WriteLine("\nPress'ENTER' to enter a new tempo.");
 
                 // Starts and stops the program.
                 timer.Start();
@@ -66,9 +72,8 @@ namespace Metronome
         // The timerElapsed method controls the metronome's tempo and sound.
         static void timerElapsed(object sender, ElapsedEventArgs e)
         {
-            // First parameter contols frequency of the sound, second controls duration(BPM) in milliseconds.
-            // The Second parameter is controlled by the user.
-            Console.Beep(1500, Tempo.res);
+            // First parameter contols frequency of the beep and the second controls duration of the beep in milliseconds.
+            Console.Beep(800, 300);
         }
     }
 }
