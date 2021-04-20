@@ -50,6 +50,8 @@ namespace Tunerfish
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label3 = new System.Windows.Forms.Label();
+            this.HzText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -269,12 +271,30 @@ namespace Tunerfish
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(797, 266);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Off By (Hz)";
+            // 
+            // HzText
+            // 
+            this.HzText.Location = new System.Drawing.Point(778, 282);
+            this.HzText.Name = "HzText";
+            this.HzText.Size = new System.Drawing.Size(100, 20);
+            this.HzText.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(925, 509);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.HzText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.noteText);
@@ -330,6 +350,8 @@ namespace Tunerfish
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox HzText;
     }
 }
 

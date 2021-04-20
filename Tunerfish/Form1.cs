@@ -138,12 +138,14 @@ namespace Tunerfish
             //Find the loudest pitch
             double loudest = result.Max();
             int index = Array.FindIndex(result, x => x == loudest);
-            noteText.Text = tuner.findClosest(Xs2[index]).name.ToString();
+
+            Note note = tuner.findClosest(Xs2[index]);
+            noteText.Text = note.name.ToString();
 
 
             pitchText.Text = Xs2[index].ToString();
 
-
+            HzText.Text = (Xs2[index] - note.frequency).ToString();
 
             //Add a bar of the same magnitude as the loudest at the index of the loudest on a separate bar
             chart1.Series[seriesArray[2]].Points.Clear();
