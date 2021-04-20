@@ -44,8 +44,12 @@ namespace Tunerfish
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.analysisBtn = new System.Windows.Forms.Button();
             this.historyBtn = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pitchText = new System.Windows.Forms.TextBox();
+            this.noteText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -169,6 +173,7 @@ namespace Tunerfish
             this.tunerBtn.TabIndex = 0;
             this.tunerBtn.Text = "Tuner";
             this.tunerBtn.UseVisualStyleBackColor = true;
+            this.tunerBtn.Click += new System.EventHandler(this.tunerBtn_Click_1);
             // 
             // splitContainer3
             // 
@@ -209,6 +214,43 @@ namespace Tunerfish
             this.historyBtn.Text = "History";
             this.historyBtn.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pitchText
+            // 
+            this.pitchText.Location = new System.Drawing.Point(778, 113);
+            this.pitchText.Name = "pitchText";
+            this.pitchText.Size = new System.Drawing.Size(100, 20);
+            this.pitchText.TabIndex = 2;
+            // 
+            // noteText
+            // 
+            this.noteText.Location = new System.Drawing.Point(778, 198);
+            this.noteText.Name = "noteText";
+            this.noteText.Size = new System.Drawing.Size(100, 20);
+            this.noteText.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(809, 182);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Note";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(812, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Pitch";
+            // 
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.Transparent;
@@ -217,19 +259,15 @@ namespace Tunerfish
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.DimGray;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(224, 64);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            this.chart1.Size = new System.Drawing.Size(592, 300);
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.chart1.Size = new System.Drawing.Size(925, 409);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -237,6 +275,10 @@ namespace Tunerfish
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(925, 509);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.noteText);
+            this.Controls.Add(this.pitchText);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -263,6 +305,7 @@ namespace Tunerfish
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -281,8 +324,12 @@ namespace Tunerfish
         private System.Windows.Forms.Button analysisBtn;
         private System.Windows.Forms.Button historyBtn;
         private System.Windows.Forms.Button tunerBtn;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox pitchText;
+        private System.Windows.Forms.TextBox noteText;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
