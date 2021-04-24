@@ -19,6 +19,7 @@ namespace Tunerfish
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
+            /*
             //Create Data Table
             DataTable HistoryTable = new DataTable();
 
@@ -43,9 +44,10 @@ namespace Tunerfish
                     HistoryTable.Rows.Add(new object[] { oItem.date, oItem.note, oItem.centOff });
                 }
             }
-
+         
             //Load into DataGridView
             dataGridView1.DataSource = HistoryTable;
+            */
         }
     }
 }
