@@ -71,7 +71,17 @@ namespace Tunerfish
             dataGridView1.Refresh();
         }
 
+        //This code is now just here so it won't cause issue with deisgner. Please ignore the ClearButton_Click
         private void ClearButton_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(fileAddress, string.Empty);
+            HistoryForm_Load(sender, e);
+            dataGridView1.Update();
+            dataGridView1.Refresh();
+        }
+        //The above code is useless
+
+        private void Clear_Click(object sender, EventArgs e)
         {
             File.WriteAllText(fileAddress, string.Empty);
             HistoryForm_Load(sender, e);
