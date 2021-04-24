@@ -19,7 +19,7 @@ namespace Tunerfish
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HistoryForm());
+            Application.Run(new SelectionForm());
 
         }
     }

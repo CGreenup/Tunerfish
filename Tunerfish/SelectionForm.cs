@@ -23,6 +23,12 @@ namespace Tunerfish
             form.Show();
             this.Hide();
         }
-        
+
+        private void history_btn_Click(object sender, EventArgs e)
+        {
+            HistoryForm historyForm = new HistoryForm(this);
+            historyForm.Show();
+            this.Hide();
+        }
     }
 }

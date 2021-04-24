@@ -11,9 +11,12 @@ namespace Tunerfish
     public partial class HistoryForm : Form
     {
         String fileAddress = Path.Combine(Directory.GetCurrentDirectory(), "Test1.json");
-        public HistoryForm()
+        Form parentForm;
+
+        public HistoryForm(Form parent)
         {
             InitializeComponent();
+            parentForm = parent;
         }
 
         private void HistoryForm_Load(object sender, EventArgs e)

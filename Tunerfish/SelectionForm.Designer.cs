@@ -113,6 +113,7 @@
             this.history_btn.TabIndex = 4;
             this.history_btn.Text = "History";
             this.history_btn.UseVisualStyleBackColor = true;
+            this.history_btn.Click += new System.EventHandler(this.history_btn_Click);
             // 
             // SelectionForm
             // 
