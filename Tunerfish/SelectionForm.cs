@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace Tunerfish
 {
-    public partial class Form2 : Form
+    public partial class SelectionForm : Form
     {
-        Form formFrom;
-
-        public Form2()
+        public SelectionForm()
         {
             InitializeComponent();
         }
 
-        public Form2(Form form)
+        private void audio_analysis_btn_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            formFrom = form;
+            AudioAnalysisForm form = new AudioAnalysisForm(this);
+            form.Show();
+            this.Hide();
         }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

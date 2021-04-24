@@ -15,8 +15,10 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Tunerfish
 {
-    public partial class Form1 : Form
+    public partial class AudioAnalysisForm : Form
     {
+        private Form parentForm;
+
         private Tuner tuner = new Tuner();
         private string[] seriesArray = { "Live Analysis", "Paused Sample", "Found Note"};
        
@@ -28,10 +30,15 @@ namespace Tunerfish
 
 
 
-        public Form1()
+        public AudioAnalysisForm(Form parent)
         {
             
             InitializeComponent();
+
+            //Get the parent form
+            parentForm = parent;
+
+            this.FormClosed += new FormClosedEventHandler(AudioAnalysisForm_FormClosed);
 
 
             for (int i = 0; i < seriesArray.Length-1; i++)
@@ -64,6 +71,11 @@ namespace Tunerfish
             //Start the timer
             //Not needed in actual code
             timer1.Enabled = true;
+        }
+
+        private void AudioAnalysisForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parentForm.Show();
         }
 
         void wi_DataAvailable(object sender, WaveInEventArgs e)
@@ -100,7 +112,7 @@ namespace Tunerfish
                 Ys[i] = vals[i];
 
                 //x-axis for the FFT, contains the pitch information Ys2
-                Xs2[i] = (double)i / Ys.Length * RATE;// * 1.02168;// / 1000.0; // units are in kHz
+                Xs2[i] = (double)i / Ys.Length * RATE * 1.0017;// / 1000.0; // units are in kHz
             }
 
            
@@ -116,23 +128,7 @@ namespace Tunerfish
                 chart1.Series[seriesArray[0]].Points.AddXY(Xs2[i], Ys2[i]);
                 result[i] = Ys2[i];
             }
-           
-           
-
-            /*
-            
-            chart1.Series[seriesArray[1]].Points.Clear();
-
-            for (int i = 0; i < (Xs2.Length); i++)
-            {
-                chart1.Series[seriesArray[1]].Points.Add(Xs2[i]);
-            }
-            */
-            
-            
-
-            
-
+            //---------------------------
             // update the displays
 
             //Find the loudest pitch
@@ -158,67 +154,15 @@ namespace Tunerfish
 
 
         }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void noteplayerBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metronomeBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tunerBtn_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void analysisBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void historyBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             UpdateAudioGraph();
         }
 
-        private void tunerBtn_Click_1(object sender, EventArgs e)
+        private void tunerBtn_Click(object sender, EventArgs e)
         {
 
-            Tuner tuner = new Tuner();
-
-            tuner.printNoteTable();
         }
     }
 }
