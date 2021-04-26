@@ -83,6 +83,12 @@
     <Compile Include="HistoryForm.Designer.cs">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotePlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotePlayerForm.Designer.cs">
+      <DependentUpon>NotePlayerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotePlayerForm.resx">
+      <DependentUpon>NotePlayerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
