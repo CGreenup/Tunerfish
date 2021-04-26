@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using NAudio.Wave;
@@ -100,33 +94,33 @@ namespace Tunerfish
             int SAMPLE_RESOLUTION = 16;
             int BYTES_PER_POINT = SAMPLE_RESOLUTION / 8;
             Int32[] vals = new Int32[frames.Length / BYTES_PER_POINT];
-            double[] Ys = new double[frames.Length / BYTES_PER_POINT];
-            double[] Ys2 = new double[frames.Length / BYTES_PER_POINT];
-            double[] Xs2 = new double[frames.Length / BYTES_PER_POINT];
+            double[] microphoneData = new double[frames.Length / BYTES_PER_POINT];
+            double[] FFTArray = new double[frames.Length / BYTES_PER_POINT];
+            double[] hertzValues = new double[frames.Length / BYTES_PER_POINT];
             for (int i = 0; i < vals.Length; i++)
             {
                 // bit shift the byte buffer into the right variable format
                 byte hByte = frames[i * 2 + 1];
                 byte lByte = frames[i * 2 + 0];
                 vals[i] = (int)(short)((hByte << 8) | lByte);
-                Ys[i] = vals[i];
+                microphoneData[i] = vals[i];
 
                 //x-axis for the FFT, contains the pitch information Ys2
-                Xs2[i] = (double)i / Ys.Length * RATE * 1.0017;// / 1000.0; // units are in kHz
+                hertzValues[i] = (double)i / microphoneData.Length * RATE;
             }
 
            
             //y-axis of the FFT
-            Ys2 = tuner.FFT(Ys);
+            FFTArray = tuner.FFT(microphoneData);
             double[] result = new double[frames.Length / BYTES_PER_POINT / 2];
             
 
             chart1.Series[seriesArray[0]].Points.Clear();
             //((Ys2.Length) / 2) - (Ys2.Length*2 / 5)
-            for (int i = 1; i < ((Ys2.Length) / 2) - (Ys2.Length * 4.4 / 10); i++)
+            for (int i = 1; i < ((FFTArray.Length) / 2) - (FFTArray.Length * 4.4 / 10); i++)
             {
-                chart1.Series[seriesArray[0]].Points.AddXY(Xs2[i], Ys2[i]);
-                result[i] = Ys2[i];
+                chart1.Series[seriesArray[0]].Points.AddXY(hertzValues[i], FFTArray[i]);
+                result[i] = FFTArray[i];
             }
             //---------------------------
             // update the displays
@@ -135,17 +129,17 @@ namespace Tunerfish
             double loudest = result.Max();
             int index = Array.FindIndex(result, x => x == loudest);
 
-            Note note = tuner.findClosest(Xs2[index]);
+            Note note = tuner.findClosest(hertzValues[index]);
             noteText.Text = note.name.ToString();
 
 
-            pitchText.Text = Xs2[index].ToString();
+            pitchText.Text = hertzValues[index].ToString();
 
-            HzText.Text = (Xs2[index] - note.frequency).ToString();
+            HzText.Text = (hertzValues[index] - note.frequency).ToString();
 
             //Add a bar of the same magnitude as the loudest at the index of the loudest on a separate bar
             chart1.Series[seriesArray[2]].Points.Clear();
-            chart1.Series[seriesArray[2]].Points.AddXY(Xs2[index], loudest);
+            chart1.Series[seriesArray[2]].Points.AddXY(hertzValues[index], loudest);
 
 
             Application.DoEvents();
