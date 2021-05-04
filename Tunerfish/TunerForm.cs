@@ -112,6 +112,7 @@ namespace Tunerfish
             Note neighborNote = findNeighborNote(exactHertz, detectedNote.index);
             Console.WriteLine("Neighboring note: " + neighborNote.name.ToString());
 
+            //Update either of the cents-off text boxes (sharpText and flatText)
             UpdateCents(exactHertz, detectedNote, neighborNote);
 
             Application.DoEvents();
@@ -152,7 +153,17 @@ namespace Tunerfish
 
             double centsOff = offBy / centDistance;
 
-            SharpText.Text = centsOff.ToString();
+            if (centsOff < 0)
+            {
+                centsOff = Math.Abs(centsOff);
+                SharpText.Text = "";
+                FlatText.Text = centsOff.ToString();
+            }
+            else
+            {
+                FlatText.Text = "";
+                SharpText.Text = centsOff.ToString();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
