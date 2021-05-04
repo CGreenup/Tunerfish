@@ -90,6 +90,7 @@
             this.tuner_btn.TabIndex = 2;
             this.tuner_btn.Text = "Tuner";
             this.tuner_btn.UseVisualStyleBackColor = true;
+            this.tuner_btn.Click += new System.EventHandler(this.tuner_btn_Click);
             // 
             // audio_analysis_btn
             // 

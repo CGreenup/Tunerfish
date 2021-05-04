@@ -14,7 +14,7 @@ namespace Tunerfish
 {
     class Tuner
     {
-        Note[] noteFrequencyTable;
+        public Note[] noteFrequencyTable;
         string[] noteNames = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
 
         public Tuner()
@@ -43,7 +43,7 @@ namespace Tunerfish
                 tempOctave = (int)(i / 12) + 1;
 
                 //Create a new Note element and add it to the table of frequencies
-                noteFrequencyTable[i] = new Note(noteNames[tempIndex], tempOctave, currentFrequency);
+                noteFrequencyTable[i] = new Note(noteNames[tempIndex], tempOctave, currentFrequency, i);
 
                 //Increment the frequency value to the next half-step, unless it's an octave of A
                 //In which case, Double A1 to the octave
@@ -124,12 +124,14 @@ namespace Tunerfish
         public string name;
         public int octave;
         public double frequency;
+        public int index;
 
-        public Note(String noteName, int noteOctave, double noteFrequency)
+        public Note(String noteName, int noteOctave, double noteFrequency, int noteIndex)
         {
             name = noteName;
             octave = noteOctave;
             frequency = noteFrequency;
+            index = noteIndex;
         }
     }
 }

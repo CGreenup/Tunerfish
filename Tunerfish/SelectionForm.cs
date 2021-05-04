@@ -20,15 +20,22 @@ namespace Tunerfish
         private void audio_analysis_btn_Click(object sender, EventArgs e)
         {
             AudioAnalysisForm form = new AudioAnalysisForm(this);
-            form.Show();
             this.Hide();
+            form.Show();
         }
 
         private void history_btn_Click(object sender, EventArgs e)
         {
             HistoryForm historyForm = new HistoryForm(this);
-            historyForm.Show();
             this.Hide();
+            historyForm.Show();
+        }
+
+        private void tuner_btn_Click(object sender, EventArgs e)
+        {
+            TunerForm tunerForm = new TunerForm(this);
+            this.Hide();
+            tunerForm.Show();
         }
     }
 }
