@@ -15,15 +15,6 @@ The program finds the closest pitch and compares it to what the program could he
 It then tells the user how many cents off as well as gives a visual indicator for how sharp or flat the signal is. 
 50 cents flat being all the way to the left and 50 cents sharp on the right.
     
-  For the AUDITORY TUNER, a simple synth of some kind will be needed. A simple sine wave generator or sample playback will more than suffice. 
-Using a single sample, different pitches can be achieved by pitch modulating to desired frequencies using known multiples. 
-For example, if the sample is a C4, to get G4 (the perfect fifth), pitch the sample up by 1.5 times. 
-Do this for only twelve tones, those being the 12 chromatic tones, and just multiply or divide the frequencies by 2 to get their respective octaves. 
-Pitches can be selected via a set of buttons, either in an arbitrary pattern or in the shape of a piano keyboard. 
-For simplicity’s sake they will only display a single octave and use an octave selector to get the desired pitch. 
-Pitches will bottom out at around C2 as most speakers cannot produce notes lower than that with much volume. 
-The pitches will max out at around C7 as any notes higher that can only be used as a tool for annoyance.
-    
   The METRONOME feature will be the most straightforward feature. 
 It takes a user input in terms of beats per minute (bpm) and, when started, plays a sound at that timing. 
 Sounds will be done either through that same synthesizer or using a percussive sound as a sample. 
