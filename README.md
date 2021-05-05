@@ -1,7 +1,7 @@
 # Tunerfish
 A desktop tuning application
 
-#INTRODUCTION
+# INTRODUCTION
     
    The main feature, THE TUNER will have 3 key functions in order to work. First, it needs to be able to get audio information from a microphone into a buffer. 
 From there, it needs to form the data in the buffer into usable wave-function data. 
@@ -38,10 +38,10 @@ The events information will include date and time a note was detected, what note
 If needed, the user can chose to clear all data or delete particular events
 
 
-#INSTALLING THE APPLICATION:
+# INSTALLING THE APPLICATION:
 
-    **Application needed: 
-        -Visual Studio 2017 or 2019
-        -Newtonsoft (can be installed by browsing NugetPackage)
+Application needed: 
+* Visual Studio 2017 or 2019
+* Newtonsoft (can be installed by browsing NugetPackage)
         
-    **To use the History and Note Player features, user needs to copy all the file from Note-History file into the directory: TunerFish->Tunerfish->bin->Debug
+To use the History and Note Player features, user needs to copy all the file from Note-History file into the directory: TunerFish->Tunerfish->bin->Debug
