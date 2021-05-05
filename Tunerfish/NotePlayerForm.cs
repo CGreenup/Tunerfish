@@ -14,6 +14,8 @@ namespace Tunerfish
 {
     public partial class NotePlayerForm : Form
     {
+        Form parentForm;
+
         //Initialize file Address for each note depending on the oactave
         static String FPath = Path.Combine(Directory.GetCurrentDirectory(), "F1.wav");
         static String GPath = Path.Combine(Directory.GetCurrentDirectory(), "G1.wav");
@@ -43,9 +45,12 @@ namespace Tunerfish
         SoundPlayer ASharpPlayer = new SoundPlayer(ASharpPath);
         SoundPlayer CSharpPlayer = new SoundPlayer(CSharpPath);
         SoundPlayer DSharpPlayer = new SoundPlayer(DSharpPath);
-        public NotePlayerForm()
+        public NotePlayerForm(Form parent)
         { 
             InitializeComponent();
+            //Initialize Parent Form
+            parentForm = parent;
+
             //Initialize Buttons Color
             FSharp.BackColor = Color.Black;
             GSharp.BackColor = Color.Black;
@@ -70,6 +75,13 @@ namespace Tunerfish
 
             SustainedCheck.BackColor = Color.White;
             Stop.BackColor = Color.White;
+
+            this.FormClosed += new FormClosedEventHandler(TunerForm_FormClosed);
+        }
+
+        private void TunerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parentForm.Show();
         }
 
         private void NotePlayerForm_Load(object sender, EventArgs e)

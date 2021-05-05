@@ -68,6 +68,7 @@
             this.metronome_btn.TabIndex = 0;
             this.metronome_btn.Text = "Metronome";
             this.metronome_btn.UseVisualStyleBackColor = true;
+            this.metronome_btn.Click += new System.EventHandler(this.metronome_btn_Click);
             // 
             // note_player_btn
             // 
@@ -79,6 +80,7 @@
             this.note_player_btn.TabIndex = 1;
             this.note_player_btn.Text = "Note Player";
             this.note_player_btn.UseVisualStyleBackColor = true;
+            this.note_player_btn.Click += new System.EventHandler(this.note_player_btn_Click);
             // 
             // tuner_btn
             // 
@@ -90,6 +92,7 @@
             this.tuner_btn.TabIndex = 2;
             this.tuner_btn.Text = "Tuner";
             this.tuner_btn.UseVisualStyleBackColor = true;
+            this.tuner_btn.Click += new System.EventHandler(this.tuner_btn_Click);
             // 
             // audio_analysis_btn
             // 

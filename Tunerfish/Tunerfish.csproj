@@ -83,6 +83,11 @@
     <Compile Include="HistoryForm.Designer.cs">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metronome.cs" />
+    <Compile Include="MetronomeForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetronomeForm1.Designer.cs" />
     <Compile Include="NotePlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,9 +115,11 @@
     <EmbeddedResource Include="HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MetronomeForm1.resx" />
     <EmbeddedResource Include="NotePlayerForm.resx">
       <DependentUpon>NotePlayerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NP2.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
