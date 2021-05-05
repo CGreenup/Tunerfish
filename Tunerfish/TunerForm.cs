@@ -145,7 +145,7 @@ namespace Tunerfish
 
             double offBy = pitchValue - currentNote.frequency;
 
-            double centsOff = offBy / centDistance;
+            int centsOff = (int) (offBy / centDistance);
 
             if (centsOff < 0)
             {

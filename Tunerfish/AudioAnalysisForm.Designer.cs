@@ -37,8 +37,8 @@ namespace Tunerfish
             this.pitchText = new System.Windows.Forms.TextBox();
             this.noteText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.HzText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -51,35 +51,29 @@ namespace Tunerfish
             // 
             // pitchText
             // 
-            this.pitchText.Location = new System.Drawing.Point(778, 113);
+            this.pitchText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pitchText.Location = new System.Drawing.Point(742, 113);
             this.pitchText.Name = "pitchText";
             this.pitchText.Size = new System.Drawing.Size(100, 20);
             this.pitchText.TabIndex = 2;
             // 
             // noteText
             // 
-            this.noteText.Location = new System.Drawing.Point(778, 198);
+            this.noteText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.noteText.Location = new System.Drawing.Point(742, 198);
             this.noteText.Name = "noteText";
             this.noteText.Size = new System.Drawing.Size(100, 20);
             this.noteText.TabIndex = 3;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(809, 182);
+            this.label1.Location = new System.Drawing.Point(773, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Note";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(812, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Pitch";
             // 
             // chart1
             // 
@@ -95,14 +89,25 @@ namespace Tunerfish
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            this.chart1.Size = new System.Drawing.Size(914, 505);
+            this.chart1.Size = new System.Drawing.Size(878, 379);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(776, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Pitch";
+            // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(797, 266);
+            this.label3.Location = new System.Drawing.Point(761, 266);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 7;
@@ -110,7 +115,8 @@ namespace Tunerfish
             // 
             // HzText
             // 
-            this.HzText.Location = new System.Drawing.Point(778, 282);
+            this.HzText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.HzText.Location = new System.Drawing.Point(742, 282);
             this.HzText.Name = "HzText";
             this.HzText.Size = new System.Drawing.Size(100, 20);
             this.HzText.TabIndex = 6;
@@ -120,7 +126,7 @@ namespace Tunerfish
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.ClientSize = new System.Drawing.Size(914, 505);
+            this.ClientSize = new System.Drawing.Size(878, 379);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.HzText);
             this.Controls.Add(this.label2);
@@ -128,6 +134,7 @@ namespace Tunerfish
             this.Controls.Add(this.noteText);
             this.Controls.Add(this.pitchText);
             this.Controls.Add(this.chart1);
+            this.MinimumSize = new System.Drawing.Size(471, 418);
             this.Name = "AudioAnalysisForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -144,8 +151,8 @@ namespace Tunerfish
         private System.Windows.Forms.TextBox pitchText;
         private System.Windows.Forms.TextBox noteText;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox HzText;
     }

@@ -15,7 +15,7 @@ namespace Tunerfish
         private string[] seriesArray = { "Live Analysis", "Paused Sample", "Found Note"};
        
         private static int RATE = 44100; //Sample rate of the microphone 
-        private static int BUFFERSIZE = (int)Math.Pow(2, 15); //Buffer size for the FFT
+        private static int BUFFERSIZE = (int)Math.Pow(2, 12); //Buffer size for the FFT
                                                                //Must be a power of two
         private BufferedWaveProvider bwp;
         private int micDeviceNum = 0;
