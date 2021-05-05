@@ -12,11 +12,7 @@ namespace Tunerfish
 {
     public partial class AudioAnalysisForm : Form
     {
-        //Get file path for json file to save history data
-        String fileAddress = Path.Combine(Directory.GetCurrentDirectory(), "HistoryData.json");
-        //Create Event list to save data before serialization
-        List<Event> History = new List<Event>();
-
+        
         private Form parentForm;
 
         private Tuner tuner = new Tuner();
@@ -77,9 +73,7 @@ namespace Tunerfish
         //This method makes the selectionForm visible again
         private void AudioAnalysisForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //serialize List of Event before closing
-            string json = JsonConvert.SerializeObject(History, Formatting.Indented);
-            File.WriteAllText(fileAddress, json);
+            
             parentForm.Show();
         }
 
@@ -158,21 +152,7 @@ namespace Tunerfish
 
             timer1.Enabled = true;
 
-            //Create Event object for history data
-            Event newEvent = new Event();
-
-            //get the current time for event
-            newEvent.date = DateTime.Now;
-
-            //get the note for event
-            newEvent.note = note.name;
-
-
-            //get centOff for event
-            newEvent.centOff = hertzValues[index] - note.frequency;
-
-            //Add newEvent to Event List
-            History.Add(newEvent);
+            
         }
         
         private void timer1_Tick(object sender, EventArgs e)
@@ -188,13 +168,9 @@ namespace Tunerfish
 
         }
 
-<<<<<<< HEAD
-        private void chart1_Click(object sender, EventArgs e)
+        private void AudioAnalysisForm_Load(object sender, EventArgs e)
         {
 
         }
-=======
-
->>>>>>> 03776ef4ee4fc5407d2fab1e4210e5056ebaf504
     }
 }

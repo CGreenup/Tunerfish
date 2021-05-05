@@ -44,167 +44,6 @@ namespace Tunerfish
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
-<<<<<<< HEAD
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 499);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1219, 123);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.splitContainer1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1219, 123);
-            this.panel2.TabIndex = 0;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer4);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1219, 123);
-            this.splitContainer1.SplitterDistance = 484;
-            this.splitContainer1.SplitterWidth = 5;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.splitContainer4.Name = "splitContainer4";
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.metronomeBtn);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.noteplayerBtn);
-            this.splitContainer4.Size = new System.Drawing.Size(484, 123);
-            this.splitContainer4.SplitterDistance = 240;
-            this.splitContainer4.SplitterWidth = 5;
-            this.splitContainer4.TabIndex = 0;
-            // 
-            // metronomeBtn
-            // 
-            this.metronomeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metronomeBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.metronomeBtn.Location = new System.Drawing.Point(0, 0);
-            this.metronomeBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.metronomeBtn.Name = "metronomeBtn";
-            this.metronomeBtn.Size = new System.Drawing.Size(240, 123);
-            this.metronomeBtn.TabIndex = 0;
-            this.metronomeBtn.Text = "Metronome";
-            this.metronomeBtn.UseVisualStyleBackColor = true;
-            // 
-            // noteplayerBtn
-            // 
-            this.noteplayerBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.noteplayerBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.noteplayerBtn.Location = new System.Drawing.Point(0, 0);
-            this.noteplayerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.noteplayerBtn.Name = "noteplayerBtn";
-            this.noteplayerBtn.Size = new System.Drawing.Size(239, 123);
-            this.noteplayerBtn.TabIndex = 0;
-            this.noteplayerBtn.Text = "Note Player";
-            this.noteplayerBtn.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.tunerBtn);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(730, 123);
-            this.splitContainer2.SplitterDistance = 242;
-            this.splitContainer2.SplitterWidth = 5;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // tunerBtn
-            // 
-            this.tunerBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tunerBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.tunerBtn.Location = new System.Drawing.Point(0, 0);
-            this.tunerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tunerBtn.Name = "tunerBtn";
-            this.tunerBtn.Size = new System.Drawing.Size(242, 123);
-            this.tunerBtn.TabIndex = 0;
-            this.tunerBtn.Text = "Tuner";
-            this.tunerBtn.UseVisualStyleBackColor = true;
-            this.tunerBtn.Click += new System.EventHandler(this.tunerBtn_Click);
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.analysisBtn);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.historyBtn);
-            this.splitContainer3.Size = new System.Drawing.Size(483, 123);
-            this.splitContainer3.SplitterDistance = 243;
-            this.splitContainer3.SplitterWidth = 5;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // analysisBtn
-            // 
-            this.analysisBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.analysisBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.analysisBtn.Location = new System.Drawing.Point(0, 0);
-            this.analysisBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.analysisBtn.Name = "analysisBtn";
-            this.analysisBtn.Size = new System.Drawing.Size(243, 123);
-            this.analysisBtn.TabIndex = 0;
-            this.analysisBtn.Text = "Audio Analysis";
-            this.analysisBtn.UseVisualStyleBackColor = true;
-            // 
-            // historyBtn
-            // 
-            this.historyBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.historyBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.historyBtn.Location = new System.Drawing.Point(0, 0);
-            this.historyBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.historyBtn.Name = "historyBtn";
-            this.historyBtn.Size = new System.Drawing.Size(235, 123);
-            this.historyBtn.TabIndex = 0;
-            this.historyBtn.Text = "History";
-            this.historyBtn.UseVisualStyleBackColor = true;
-            // 
-=======
->>>>>>> 03776ef4ee4fc5407d2fab1e4210e5056ebaf504
             // timer1
             // 
             this.timer1.Interval = 5;
@@ -213,7 +52,7 @@ namespace Tunerfish
             // pitchText
             // 
             this.pitchText.Location = new System.Drawing.Point(1037, 139);
-            this.pitchText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pitchText.Margin = new System.Windows.Forms.Padding(4);
             this.pitchText.Name = "pitchText";
             this.pitchText.Size = new System.Drawing.Size(132, 22);
             this.pitchText.TabIndex = 2;
@@ -221,7 +60,7 @@ namespace Tunerfish
             // noteText
             // 
             this.noteText.Location = new System.Drawing.Point(1037, 244);
-            this.noteText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.noteText.Margin = new System.Windows.Forms.Padding(4);
             this.noteText.Name = "noteText";
             this.noteText.Size = new System.Drawing.Size(132, 22);
             this.noteText.TabIndex = 3;
@@ -258,14 +97,10 @@ namespace Tunerfish
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-<<<<<<< HEAD
-            this.chart1.Size = new System.Drawing.Size(1219, 499);
-=======
-            this.chart1.Size = new System.Drawing.Size(914, 505);
->>>>>>> 03776ef4ee4fc5407d2fab1e4210e5056ebaf504
+            this.chart1.Size = new System.Drawing.Size(1219, 622);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
@@ -283,7 +118,7 @@ namespace Tunerfish
             // HzText
             // 
             this.HzText.Location = new System.Drawing.Point(1037, 347);
-            this.HzText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HzText.Margin = new System.Windows.Forms.Padding(4);
             this.HzText.Name = "HzText";
             this.HzText.Size = new System.Drawing.Size(132, 22);
             this.HzText.TabIndex = 6;
@@ -301,21 +136,22 @@ namespace Tunerfish
             this.Controls.Add(this.noteText);
             this.Controls.Add(this.pitchText);
             this.Controls.Add(this.chart1);
-<<<<<<< HEAD
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
->>>>>>> 03776ef4ee4fc5407d2fab1e4210e5056ebaf504
             this.Name = "AudioAnalysisForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.AudioAnalysisForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-       
+        private void chart1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         #endregion
         private System.Windows.Forms.Timer timer1;
