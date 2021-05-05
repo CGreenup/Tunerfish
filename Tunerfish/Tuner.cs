@@ -14,7 +14,10 @@ namespace Tunerfish
 {
     class Tuner
     {
+        //This is a table that contains every note that is detectable by the TunerFish
         public Note[] noteFrequencyTable;
+
+        //The note names for every note within an octave
         string[] noteNames = { "A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab" };
 
         public Tuner()
@@ -22,14 +25,16 @@ namespace Tunerfish
             setupNoteFrequencyTable();
         }
 
+        //Fills the noteFrequencyTable with the Notes
         void setupNoteFrequencyTable()
         {
-            
-            
+            //Number of octaves from A1 to detect
             int octaves = 8;
 
             int tempIndex;
             int tempOctave;
+
+            //This is A1, and it is the lowest note this tuner can detect
             double currentFrequency = 55;
 
             noteFrequencyTable = new Note[12 * octaves];
@@ -61,6 +66,8 @@ namespace Tunerfish
             }
         }
 
+        //Debug Tool
+        //Outputs the contents of the noteFrequencyTable array into the console
         public void printNoteTable()
         {
             int oct;
@@ -73,10 +80,11 @@ namespace Tunerfish
                 name = noteFrequencyTable[i].name;
                 freq = noteFrequencyTable[i].frequency;
 
-                Console.WriteLine(name+ (oct.ToString()) + " = " + freq.ToString() );
+                Console.WriteLine(name + oct.ToString() + " = " + freq.ToString() );
             }
         }
 
+        //Finds the closest note given any frequency and outputs it
         public Note findClosest(double frequency)
         {
             Note closestNote = noteFrequencyTable[0];
@@ -96,6 +104,7 @@ namespace Tunerfish
             return closestNote;
         }
 
+        //Perform an FFT on an array of doubles
         public double[] FFT(double[] data)
         {
             
@@ -116,14 +125,20 @@ namespace Tunerfish
             }
             return fft;
         }
-        //private double magnitude()
     }
 
     class Note
     {
+        //Note name
         public string name;
+
+        //Octave of the note
         public int octave;
+
+        //Frequency of the note in Hertz(Hz)
         public double frequency;
+
+        //Index within the noteFrequencyTable
         public int index;
 
         public Note(String noteName, int noteOctave, double noteFrequency, int noteIndex)

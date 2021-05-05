@@ -9,13 +9,27 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Metronome
+namespace Tunerfish
 {
     public partial class MetronomeForm1 : Form
     {
-        public MetronomeForm1()
+        //DON'T DELETE THIS
+        Form parentForm;
+
+        public MetronomeForm1(Form parent)
         {
             InitializeComponent();
+
+            //DON'T DELETE THIS
+            parentForm = parent;
+            this.FormClosed += new FormClosedEventHandler(MetronomeForm1_FormClosed);
+
+        }
+
+        //DON'T DELETE THIS
+        private void MetronomeForm1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parentForm.Show();
         }
 
         //5 BPM

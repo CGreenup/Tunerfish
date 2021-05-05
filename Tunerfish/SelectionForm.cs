@@ -17,6 +17,10 @@ namespace Tunerfish
             InitializeComponent();
         }
 
+        // For each button within the selection form, a new form is 
+        // created with a link to this parent form
+        // Then this parent form is hidden
+        // Then the desired form is shown
         private void audio_analysis_btn_Click(object sender, EventArgs e)
         {
             AudioAnalysisForm form = new AudioAnalysisForm(this);

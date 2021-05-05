@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Metronome
+namespace Tunerfish
 {
     static class Metronome
     {
+
+        /*
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -19,5 +21,6 @@ namespace Metronome
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MetronomeForm1());
         }
+        */
     }
 }
