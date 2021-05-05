@@ -18,5 +18,14 @@ The History feature will display History of Audio Analysis events. The events in
 Application needed: 
 * Visual Studio 2017 or 2019
 * Newtonsoft (can be installed by browsing NugetPackage)
+* C# Default Libraries
+* Accord
+* Math.Net
+* JSON
+
         
 To use the History and Note Player features, user needs to copy all the file from Note-History file into the directory: TunerFish->Tunerfish->bin->Debug
+
+# How to Deploy
+Install Visual Studio 2017 or 2019. Then select the project solution. After opening the solution, press the green button.
+
