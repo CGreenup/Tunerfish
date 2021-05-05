@@ -3,6 +3,11 @@ using System.Linq;
 using System.Windows.Forms;
 
 using NAudio.Wave;
+using TunerFish;
+using System.Collections.Generic;
+
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Tunerfish
 {
@@ -16,6 +21,13 @@ namespace Tunerfish
                                                               //Must be a power of two
         private BufferedWaveProvider bwp;
         private int micDeviceNum = 0;
+
+        //Get file path for json file to save history data
+        String fileAddress = Path.Combine(Directory.GetCurrentDirectory(), "HistoryData.json");
+        //Create Event list to save data before serialization
+        List<Event> History = new List<Event>();
+
+
 
         public TunerForm(Form parent)
         {
@@ -42,6 +54,9 @@ namespace Tunerfish
 
         private void TunerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //serialize List of Event before closing
+            string json = JsonConvert.SerializeObject(History, Formatting.Indented);
+            File.WriteAllText(fileAddress, json);
             parentForm.Show();
         }
 
@@ -112,8 +127,6 @@ namespace Tunerfish
             Application.DoEvents();
 
             timer1.Enabled = true;
-
-
         }
 
         private Note findNeighborNote(double pitchValue, int currentNoteIndex)
@@ -158,12 +171,31 @@ namespace Tunerfish
                 FlatText.Text = "";
                 SharpText.Text = centsOff.ToString();
             }
+
+            //Create Event object for history data
+            Event newEvent = new Event();
+
+            //get the current time for event
+            newEvent.date = DateTime.Now;
+
+            //get the note for event
+            newEvent.note = currentNote.name;
+
+
+            //get centOff for event
+            newEvent.centOff = centsOff;
+
+            //Add newEvent to Event List
+            History.Add(newEvent);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             UpdateAudioGraph();
         }
-      
+        private void TunerForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

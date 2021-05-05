@@ -11,6 +11,7 @@ namespace Tunerfish
     public partial class HistoryForm : Form
     {
         String fileAddress = Path.Combine(Directory.GetCurrentDirectory(), "HistoryData.json");
+
         Form parentForm;
 
         public HistoryForm(Form parent)

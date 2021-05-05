@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.IO;
 using NAudio.Wave;
 using System.Windows.Forms.DataVisualization.Charting;
+using TunerFish;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Tunerfish
 {
     public partial class AudioAnalysisForm : Form
     {
+        
         private Form parentForm;
 
         private Tuner tuner = new Tuner();
@@ -69,6 +73,7 @@ namespace Tunerfish
         //This method makes the selectionForm visible again
         private void AudioAnalysisForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            
             parentForm.Show();
         }
 
@@ -133,6 +138,8 @@ namespace Tunerfish
             noteText.Text = note.name.ToString();
 
 
+
+
             pitchText.Text = hertzValues[index].ToString();
 
             HzText.Text = (hertzValues[index] - note.frequency).ToString();
@@ -141,17 +148,19 @@ namespace Tunerfish
             chart1.Series[seriesArray[2]].Points.Clear();
             chart1.Series[seriesArray[2]].Points.AddXY(hertzValues[index], loudest);
 
-
             Application.DoEvents();
 
             timer1.Enabled = true;
 
-
+            
         }
         
         private void timer1_Tick(object sender, EventArgs e)
         {
             UpdateAudioGraph();
+
+
+
         }
 
         private void tunerBtn_Click(object sender, EventArgs e)
@@ -159,6 +168,9 @@ namespace Tunerfish
 
         }
 
+        private void AudioAnalysisForm_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
