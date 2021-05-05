@@ -6,6 +6,6 @@ namespace TunerFish
     {
         public DateTime date { get; set; }
         public String note { get; set; }
-        public int centOff { get; set; }
+        public double centOff { get; set; }
     }
 }
