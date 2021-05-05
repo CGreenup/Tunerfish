@@ -11,8 +11,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Metronome
+namespace Tunerfish
 {
+    /*
     static class Metronome
     {
         /// <summary>
@@ -27,4 +28,5 @@ namespace Metronome
             Application.Run(new MetronomeForm1());
         }
     }
+    */
 }

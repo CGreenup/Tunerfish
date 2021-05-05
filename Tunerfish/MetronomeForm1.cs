@@ -16,13 +16,16 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Metronome
+namespace Tunerfish
 {
     public partial class MetronomeForm1 : Form
     {
-        public MetronomeForm1()
+        Form parentForm;
+
+        public MetronomeForm1(Form parent)
         {
             InitializeComponent();
+            parentForm = parent;
         }
 
         //5 BPM

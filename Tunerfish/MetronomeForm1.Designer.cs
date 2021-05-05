@@ -1,5 +1,5 @@
 ﻿
-namespace Metronome
+namespace Tunerfish
 {
     partial class MetronomeForm1
     {
