@@ -179,7 +179,7 @@ namespace Tunerfish
             newEvent.date = DateTime.Now;
 
             //get the note for event
-            newEvent.note = currentNote.name;
+            newEvent.note = currentNote.name + currentNote.octave.ToString();
 
 
             //get centOff for event
