@@ -45,9 +45,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.HzText, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -55,9 +55,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(807, 459);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -69,13 +67,13 @@
             this.tableLayoutPanel2.Controls.Add(this.SharpText, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.FlatText, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(269, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(255, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(260, 444);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(296, 453);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel1
@@ -83,9 +81,9 @@
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.Controls.Add(this.NoteText);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 151);
+            this.panel1.Location = new System.Drawing.Point(3, 154);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 142);
+            this.panel1.Size = new System.Drawing.Size(290, 145);
             this.panel1.TabIndex = 0;
             // 
             // NoteText
@@ -95,7 +93,7 @@
             this.NoteText.Font = new System.Drawing.Font("Microsoft Yi Baiti", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoteText.Location = new System.Drawing.Point(0, 0);
             this.NoteText.Name = "NoteText";
-            this.NoteText.Size = new System.Drawing.Size(254, 142);
+            this.NoteText.Size = new System.Drawing.Size(290, 145);
             this.NoteText.TabIndex = 0;
             this.NoteText.Text = "~";
             this.NoteText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,7 +104,7 @@
             this.SharpText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SharpText.Location = new System.Drawing.Point(3, 0);
             this.SharpText.Name = "SharpText";
-            this.SharpText.Size = new System.Drawing.Size(254, 148);
+            this.SharpText.Size = new System.Drawing.Size(290, 151);
             this.SharpText.TabIndex = 1;
             this.SharpText.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -114,9 +112,9 @@
             // 
             this.FlatText.AutoSize = true;
             this.FlatText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlatText.Location = new System.Drawing.Point(3, 296);
+            this.FlatText.Location = new System.Drawing.Point(3, 302);
             this.FlatText.Name = "FlatText";
-            this.FlatText.Size = new System.Drawing.Size(254, 148);
+            this.FlatText.Size = new System.Drawing.Size(290, 151);
             this.FlatText.TabIndex = 2;
             this.FlatText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -124,9 +122,9 @@
             // 
             this.HzText.AutoSize = true;
             this.HzText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HzText.Location = new System.Drawing.Point(535, 0);
+            this.HzText.Location = new System.Drawing.Point(557, 0);
             this.HzText.Name = "HzText";
-            this.HzText.Size = new System.Drawing.Size(262, 450);
+            this.HzText.Size = new System.Drawing.Size(247, 459);
             this.HzText.TabIndex = 1;
             this.HzText.Text = "label1";
             this.HzText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -142,9 +140,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(807, 459);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(401, 269);
+            this.MinimumSize = new System.Drawing.Size(823, 376);
             this.Name = "TunerForm";
             this.Text = "TunerForm";
             this.tableLayoutPanel1.ResumeLayout(false);

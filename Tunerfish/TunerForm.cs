@@ -116,7 +116,7 @@ namespace Tunerfish
 
             //Display the exact pitch in Hertz (Hz)
             double exactHertz = hertzValues[index];
-            HzText.Text = exactHertz.ToString();
+            HzText.Text = "Pitch (Hz)\n" + exactHertz.ToString();
 
             Note neighborNote = findNeighborNote(exactHertz, detectedNote.index);
             Console.WriteLine("Neighboring note: " + neighborNote.name.ToString());
