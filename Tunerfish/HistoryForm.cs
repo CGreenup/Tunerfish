@@ -18,6 +18,13 @@ namespace Tunerfish
         {
             InitializeComponent();
             parentForm = parent;
+
+            this.FormClosed += new FormClosedEventHandler(HistoryForm_FormClosed);
+        }
+
+        private void HistoryForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parentForm.Show();
         }
 
         private void HistoryForm_Load(object sender, EventArgs e)
