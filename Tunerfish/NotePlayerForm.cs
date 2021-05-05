@@ -14,6 +14,7 @@ namespace Tunerfish
 {
     public partial class NotePlayerForm : Form
     {
+        //Initialize link to parent form
         Form parentForm;
 
         //Initialize file Address for each note depending on the oactave
@@ -79,6 +80,7 @@ namespace Tunerfish
             this.FormClosed += new FormClosedEventHandler(TunerForm_FormClosed);
         }
 
+        //When this form is closed, show the parent form
         private void TunerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             parentForm.Show();

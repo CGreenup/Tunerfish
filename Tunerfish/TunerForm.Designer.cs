@@ -127,7 +127,7 @@
             this.HzText.Name = "HzText";
             this.HzText.Size = new System.Drawing.Size(262, 450);
             this.HzText.TabIndex = 1;
-            this.HzText.Text = "label1";
+            this.HzText.Text = "Looking for Microphone";
             this.HzText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // timer1
