@@ -1,19 +1,11 @@
-/*********************************\
-|            Tunerfish            |
-|        Metronome Feature        |
-|        by Gavin Werenczuk       |
-|     Last Updated 05/04/2021     |
-\*********************************/
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tunerfish
+namespace Metronome
 {
-    /*
     static class Metronome
     {
         /// <summary>
@@ -28,5 +20,4 @@ namespace Tunerfish
             Application.Run(new MetronomeForm1());
         }
     }
-    */
 }
