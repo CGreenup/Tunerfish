@@ -46,7 +46,7 @@ namespace Tunerfish
             // 
             // timer1
             // 
-            this.timer1.Interval = 5;
+            this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pitchText
@@ -88,7 +88,7 @@ namespace Tunerfish
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.chart1.Size = new System.Drawing.Size(878, 379);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -125,7 +125,7 @@ namespace Tunerfish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(878, 379);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.HzText);

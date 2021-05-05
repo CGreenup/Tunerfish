@@ -160,16 +160,18 @@ namespace Tunerfish
 
             int centsOff = (int) (offBy / centDistance);
 
+            //If the cents are negative, the note is flat
             if (centsOff < 0)
             {
                 centsOff = Math.Abs(centsOff);
                 SharpText.Text = "";
-                FlatText.Text = centsOff.ToString();
+                FlatText.Text = centsOff.ToString() + "\nCents flat.";
             }
+            //Otherwise, the note is sharp
             else
             {
                 FlatText.Text = "";
-                SharpText.Text = centsOff.ToString();
+                SharpText.Text = "Cents Sharp\n" + centsOff.ToString();
             }
 
             //Create Event object for history data
@@ -192,10 +194,6 @@ namespace Tunerfish
         private void timer1_Tick(object sender, EventArgs e)
         {
             UpdateAudioGraph();
-        }
-        private void TunerForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
