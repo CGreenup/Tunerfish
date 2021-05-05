@@ -3,8 +3,6 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 using NAudio.Wave;
-using NAudio.CoreAudioApi;
-using System.Numerics;
 using System.Windows.Forms.DataVisualization.Charting;
 using TunerFish;
 using System.Collections.Generic;
@@ -75,6 +73,8 @@ namespace Tunerfish
             timer1.Enabled = true;
         }
 
+        //Handler for when the form closes
+        //This method makes the selectionForm visible again
         private void AudioAnalysisForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             //serialize List of Event before closing
@@ -117,7 +117,7 @@ namespace Tunerfish
                 microphoneData[i] = vals[i];
 
                 //x-axis for the FFT, contains the pitch information Ys2
-                hertzValues[i] = (double)i / microphoneData.Length * RATE;
+                hertzValues[i] = (double)i / microphoneData.Length * RATE + 2-.739;
             }
 
            
@@ -128,7 +128,7 @@ namespace Tunerfish
 
             chart1.Series[seriesArray[0]].Points.Clear();
             //((Ys2.Length) / 2) - (Ys2.Length*2 / 5)
-            for (int i = 1; i < ((FFTArray.Length) / 2) - (FFTArray.Length * 4.4 / 10); i++)
+            for (int i = 1; hertzValues[i] < 5000; i++)
             {
                 chart1.Series[seriesArray[0]].Points.AddXY(hertzValues[i], FFTArray[i]);
                 result[i] = FFTArray[i];
@@ -188,9 +188,13 @@ namespace Tunerfish
 
         }
 
+<<<<<<< HEAD
         private void chart1_Click(object sender, EventArgs e)
         {
 
         }
+=======
+
+>>>>>>> 03776ef4ee4fc5407d2fab1e4210e5056ebaf504
     }
 }
