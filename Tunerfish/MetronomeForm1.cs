@@ -26,6 +26,7 @@ namespace Tunerfish
 
         }
 
+        //DON'T DELETE THIS
         private void MetronomeForm1_FormClosed(object sender, FormClosedEventArgs e)
         {
             parentForm.Show();
