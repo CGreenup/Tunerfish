@@ -20,7 +20,7 @@ namespace Tunerfish
        
         private static int RATE = 44100; //Sample rate of the microphone 
         private static int BUFFERSIZE = (int)Math.Pow(2, 12); //Buffer size for the FFT
-                                                               //Must be a power of two
+                                                               //Must be a power voidof two
         private BufferedWaveProvider bwp;
         private int micDeviceNum = 0;
 
@@ -40,7 +40,7 @@ namespace Tunerfish
             for (int i = 0; i < seriesArray.Length-1; i++)
             {
                 chart1.Series.Add(seriesArray[i]).ChartType = SeriesChartType.Line;
-                //chart1.ChartAreas[0].AxisY.Maximum = 20;
+                chart1.ChartAreas[0].AxisY.Maximum = 800000;
             }
             chart1.Series.Add(seriesArray[2]).ChartType = SeriesChartType.Column;
 
@@ -162,15 +162,6 @@ namespace Tunerfish
 
 
         }
-
-        private void tunerBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AudioAnalysisForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
